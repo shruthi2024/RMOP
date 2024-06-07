@@ -1,0 +1,46 @@
+Let's break down the steps to build this automation framework:
+
+1. **Setup Environment**:
+   - Provision AWS EC2 instances to serve as remote nodes. Ensure they have the necessary permissions to interact with the AWS services.
+   - Install Python and Paramiko on both the local machine (where the automation script will run) and the remote EC2 instances.
+
+2. **Project Structure**:
+   - Create a project directory with subdirectories for tests, libraries, resources, results, configs, etc., similar to the structure mentioned earlier.
+
+3. **Test Case Development**:
+   - Write Python scripts to connect to multiple AWS instances concurrently using Paramiko.
+   - Execute the desired CLI commands on each instance and capture the output.
+   - Aggregate the results and generate a report.
+
+4. **Email Notification**:
+   - Implement functions to generate the report and send it via email using Python's smtplib module.
+   - Trigger the email notification upon completion of the automation script.
+
+5. **Defect Reporting and Logging**:
+   - Develop functions to interact with JIRA's REST API for defect reporting and logging.
+   - Define functions for creating, updating, and retrieving JIRA issues based on detected defects during test execution.
+
+6. **CI/CD Integration with Jenkins**:
+   - Install and configure Jenkins on a server.
+   - Set up Jenkins pipelines to trigger the automation script upon code changes in the repository.
+   - Configure the pipeline to send email notifications and update JIRA issues based on the test results.
+
+7. **Automated Test Execution**:
+   - Configure the Jenkins pipeline to clone the repository, install dependencies, and execute the automation script.
+   - Set up triggers to run the pipeline automatically upon code commits or merges.
+
+8. **Version Control**:
+   - Initialize a Git repository for the automation framework and commit the initial project structure.
+   - Collaborate with team members using Git workflows to manage changes and updates.
+
+9. **AWS Integration**:
+   - Ensure that the automation scripts have the necessary AWS credentials or IAM roles to interact with EC2 instances.
+   - Utilize Boto3, the AWS SDK for Python, to manage EC2 instances and execute CLI commands remotely.
+
+10. **Monitoring and Error Handling**:
+    - Implement logging mechanisms to capture errors and exceptions during script execution.
+    - Integrate monitoring solutions like CloudWatch to track the performance and health of the automation framework and AWS resources.
+
+By following these steps, you can build a robust automation framework to connect to multiple AWS instances,
+execute CLI commands, generate reports, trigger email notifications, and log defects in JIRA.
+Integrating with CI/CD pipelines using Jenkins ensures automated test execution and seamless integration with your development workflow.

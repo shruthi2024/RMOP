@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ EC2_Health_Check }}</title>
+</head>
+<body>
+    <h1>Welcome, {{ user_name }}!</h1>
+    <p>Your account balance is ${{ account_balance }}.</p>
+    {% if is_admin %}
+        <p>You have admin privileges.</p>
+    {% else %}
+        <p>You do not have admin privileges.</p>
+    {% endif %}
+</body>
+</html>
